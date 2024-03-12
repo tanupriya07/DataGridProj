@@ -1,0 +1,39 @@
+.user-search {
+    position: relative;
+  }
+  
+  .user-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2; /* Set a higher z-index value */
+  }
+  
+  .grid-container {
+    position: relative; /* Ensure relative positioning for z-index to work */
+    z-index: 1; /* Lower z-index value to keep grid behind user-details */
+    /* Other styles for grid-container */
+  }
+
+  .form-input{
+    height: fit-content;
+    input{
+        padding: 10px;
+        border: black solid;
+        border-radius: 5px;
+        height: 50px;
+        margin: 10px;
+    }
+
+    button{
+        padding: 10px;
+        border: black solid;
+        border-radius: 5px;
+        height: 50px;
+        margin: 10px;
+        background-color: black;
+        color: white;
+    }
+  }
+  

@@ -1,5 +1,21 @@
-<form>
-  
-</form>
 
-<igx-grid #grid1 id="grid1" [data]="localData" [autoGenerate]="true"></igx-grid>
+<div class="form-input">
+  <form [formGroup]="filterForm" (ngSubmit)="displayData()">
+    <input type="text" formControlName="id" placeholder="ID">
+    <input type="text" formControlName="username" placeholder="Username">
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div class="user-search">
+  <div class="user-details">
+    <app-user-details *ngIf="isSideSectionVisible" [rowData]="selectedRowData" (close)="closeSideSection()"></app-user-details>
+  </div>
+  <div class="grid-container">
+    <igx-grid #grid [data]="filteredData" [height]="'550px'" [cellSelection]="selectionMode"
+                (selected)="onRowSelected($event)">  <igx-column field="id" headerCheckboxSelection="true"></igx-column>
+      <igx-column field="name" headerCheckboxSelection="true"></igx-column>
+      <igx-column field="username" headerCheckboxSelection="true"></igx-column>
+      <igx-column field="occupation" headerCheckboxSelection="true"></igx-column>
+    </igx-grid>
+  </div>
+</div>
